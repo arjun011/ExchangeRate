@@ -25,7 +25,6 @@ class LiveRateViewModel: ObservableObject {
             switch response {
             case let .success(rates):
                 self.latestRates = rates
-                
                 self.ratesList = self.latestRates.rates ?? [String:Double]()
                 
             case let .error(error):

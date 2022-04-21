@@ -12,4 +12,6 @@ fileprivate let baseUrl = "https://api.exchangerate.host/"
 struct APIConstant {
 
     static let getLatestRates = baseUrl + "latest"
+    
+    static let getHistoricalRates = baseUrl + "timeseries?start_date=%@&end_date=%@&base=%@&symbols=%@"
 }

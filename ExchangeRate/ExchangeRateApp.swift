@@ -13,7 +13,7 @@ struct ExchangeRateApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LiveRateView()
+            HistoricalRatesView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

@@ -10,38 +10,42 @@ import SwiftUI
 struct LiveRateView: View {
     @StateObject var model = LiveRateViewModel()
     var body: some View {
-        VStack(alignment: .center, spacing: 0) {
+        
+        NavigationView {
             
-            List {
+            VStack(alignment: .center, spacing: 0) {
                 
-                Section("Live Rate") {
+                List {
                     
-                    ForEach(model.ratesList.keys.sorted(), id: \.self) { key in
+                    Section("Live Rate") {
                         
-                        HStack(alignment: .center, content: {
+                        ForEach(model.ratesList.keys.sorted(), id: \.self) { key in
                             
-                            Text(key).fontWeight(.semibold)
-                            
-                            Spacer()
-                            
-                            Text(String(format: "%.4f", model.ratesList[key] ?? 0.0))
-                            
-                            Image(systemName: "chevron.right")
-                                .padding(.horizontal, 10)
-                            
-                        })
-                       
+                            HStack(alignment: .center, content: {
+                                
+                                Text(key).fontWeight(.semibold)
+                                
+                                Spacer()
+                                
+                                Text(String(format: "%.4f", model.ratesList[key] ?? 0.0))
+                                
+                                Image(systemName: "chevron.right")
+                                    .padding(.horizontal, 10)
+                                
+                            })
+                           
+                        
+                        }
+                    }
                     
+                }.listStyle(.grouped)
+                    .onAppear {
+                        Task {
+                            await self.model.retriveLatestRatesSync(base: "USD")
+                        }
                     }
-                }
-                
-            }.listStyle(.grouped)
-                .onAppear {
-                    Task {
-                        await self.model.retriveLatestRatesSync(base: "USD")
-                    }
-                }
-            
+            }
+            .navigationTitle("Latest Rates")
         }
     }
 }

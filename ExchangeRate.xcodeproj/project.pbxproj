@@ -22,6 +22,12 @@
 		DCB6706128116CD300AABBF0 /* LiveRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6706028116CD300AABBF0 /* LiveRateViewModel.swift */; };
 		DCB6706428116D3500AABBF0 /* LatestRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6706328116D3500AABBF0 /* LatestRateDataModel.swift */; };
 		DCB67066281192AE00AABBF0 /* LiveRatesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB67065281192AE00AABBF0 /* LiveRatesClient.swift */; };
+		DCFC4F1E28119FFD00B02CFD /* HistoricalRatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F1D28119FFD00B02CFD /* HistoricalRatesView.swift */; };
+		DCFC4F222811A1C700B02CFD /* HistricalRatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F212811A1C700B02CFD /* HistricalRatesViewModel.swift */; };
+		DCFC4F242811A2E000B02CFD /* HistoricalRatesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F232811A2E000B02CFD /* HistoricalRatesClient.swift */; };
+		DCFC4F262811A33D00B02CFD /* HistoricalRatesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F252811A33D00B02CFD /* HistoricalRatesDataModel.swift */; };
+		DCFC4F282811A39A00B02CFD /* HistoricalRatesInputParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F272811A39A00B02CFD /* HistoricalRatesInputParameter.swift */; };
+		DCFC4F2A2811A85800B02CFD /* LiveRateViewRequestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F292811A85800B02CFD /* LiveRateViewRequestDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +66,12 @@
 		DCB6706028116CD300AABBF0 /* LiveRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRateViewModel.swift; sourceTree = "<group>"; };
 		DCB6706328116D3500AABBF0 /* LatestRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestRateDataModel.swift; sourceTree = "<group>"; };
 		DCB67065281192AE00AABBF0 /* LiveRatesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRatesClient.swift; sourceTree = "<group>"; };
+		DCFC4F1D28119FFD00B02CFD /* HistoricalRatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalRatesView.swift; sourceTree = "<group>"; };
+		DCFC4F212811A1C700B02CFD /* HistricalRatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistricalRatesViewModel.swift; sourceTree = "<group>"; };
+		DCFC4F232811A2E000B02CFD /* HistoricalRatesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalRatesClient.swift; sourceTree = "<group>"; };
+		DCFC4F252811A33D00B02CFD /* HistoricalRatesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalRatesDataModel.swift; sourceTree = "<group>"; };
+		DCFC4F272811A39A00B02CFD /* HistoricalRatesInputParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalRatesInputParameter.swift; sourceTree = "<group>"; };
+		DCFC4F292811A85800B02CFD /* LiveRateViewRequestDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRateViewRequestDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +122,10 @@
 		DCB6702828115C8F00AABBF0 /* ExchangeRate */ = {
 			isa = PBXGroup;
 			children = (
-				DCB6706228116D1E00AABBF0 /* DataModel */,
 				DCB6705B28116B9800AABBF0 /* Manager */,
+				DCB6706228116D1E00AABBF0 /* DataModel */,
 				DCB67058281162A800AABBF0 /* Home */,
+				DCFC4F1C28119FD000B02CFD /* Historical Rates */,
 				DCB6702928115C8F00AABBF0 /* ExchangeRateApp.swift */,
 				DCB6702B28115C8F00AABBF0 /* ContentView.swift */,
 				DCB6702D28115C9300AABBF0 /* Assets.xcassets */,
@@ -171,8 +184,21 @@
 			isa = PBXGroup;
 			children = (
 				DCB6706328116D3500AABBF0 /* LatestRateDataModel.swift */,
+				DCFC4F252811A33D00B02CFD /* HistoricalRatesDataModel.swift */,
+				DCFC4F272811A39A00B02CFD /* HistoricalRatesInputParameter.swift */,
+				DCFC4F292811A85800B02CFD /* LiveRateViewRequestDataModel.swift */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		DCFC4F1C28119FD000B02CFD /* Historical Rates */ = {
+			isa = PBXGroup;
+			children = (
+				DCFC4F1D28119FFD00B02CFD /* HistoricalRatesView.swift */,
+				DCFC4F212811A1C700B02CFD /* HistricalRatesViewModel.swift */,
+				DCFC4F232811A2E000B02CFD /* HistoricalRatesClient.swift */,
+			);
+			path = "Historical Rates";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,11 +335,17 @@
 				DCB6703628115C9300AABBF0 /* ExchangeRate.xcdatamodeld in Sources */,
 				DCB6706128116CD300AABBF0 /* LiveRateViewModel.swift in Sources */,
 				DCB6705D28116BD400AABBF0 /* ClientManager.swift in Sources */,
+				DCFC4F282811A39A00B02CFD /* HistoricalRatesInputParameter.swift in Sources */,
+				DCFC4F1E28119FFD00B02CFD /* HistoricalRatesView.swift in Sources */,
+				DCFC4F262811A33D00B02CFD /* HistoricalRatesDataModel.swift in Sources */,
 				DCB67066281192AE00AABBF0 /* LiveRatesClient.swift in Sources */,
+				DCFC4F2A2811A85800B02CFD /* LiveRateViewRequestDataModel.swift in Sources */,
+				DCFC4F242811A2E000B02CFD /* HistoricalRatesClient.swift in Sources */,
 				DCB6703328115C9300AABBF0 /* Persistence.swift in Sources */,
 				DCB6702C28115C8F00AABBF0 /* ContentView.swift in Sources */,
 				DCB6702A28115C8F00AABBF0 /* ExchangeRateApp.swift in Sources */,
 				DCB6706428116D3500AABBF0 /* LatestRateDataModel.swift in Sources */,
+				DCFC4F222811A1C700B02CFD /* HistricalRatesViewModel.swift in Sources */,
 				DCB6705F28116C3900AABBF0 /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
