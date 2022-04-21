@@ -16,6 +16,12 @@
 		DCB6704028115C9300AABBF0 /* ExchangeRateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6703F28115C9300AABBF0 /* ExchangeRateTests.swift */; };
 		DCB6704A28115C9300AABBF0 /* ExchangeRateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6704928115C9300AABBF0 /* ExchangeRateUITests.swift */; };
 		DCB6704C28115C9300AABBF0 /* ExchangeRateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6704B28115C9300AABBF0 /* ExchangeRateUITestsLaunchTests.swift */; };
+		DCB6705A2811631800AABBF0 /* LiveRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB670592811631800AABBF0 /* LiveRateView.swift */; };
+		DCB6705D28116BD400AABBF0 /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6705C28116BD400AABBF0 /* ClientManager.swift */; };
+		DCB6705F28116C3900AABBF0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6705E28116C3900AABBF0 /* APIManager.swift */; };
+		DCB6706128116CD300AABBF0 /* LiveRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6706028116CD300AABBF0 /* LiveRateViewModel.swift */; };
+		DCB6706428116D3500AABBF0 /* LatestRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6706328116D3500AABBF0 /* LatestRateDataModel.swift */; };
+		DCB67066281192AE00AABBF0 /* LiveRatesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB67065281192AE00AABBF0 /* LiveRatesClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +54,12 @@
 		DCB6704528115C9300AABBF0 /* ExchangeRateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeRateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB6704928115C9300AABBF0 /* ExchangeRateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateUITests.swift; sourceTree = "<group>"; };
 		DCB6704B28115C9300AABBF0 /* ExchangeRateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DCB670592811631800AABBF0 /* LiveRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRateView.swift; sourceTree = "<group>"; };
+		DCB6705C28116BD400AABBF0 /* ClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientManager.swift; sourceTree = "<group>"; };
+		DCB6705E28116C3900AABBF0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		DCB6706028116CD300AABBF0 /* LiveRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRateViewModel.swift; sourceTree = "<group>"; };
+		DCB6706328116D3500AABBF0 /* LatestRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestRateDataModel.swift; sourceTree = "<group>"; };
+		DCB67065281192AE00AABBF0 /* LiveRatesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRatesClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +110,9 @@
 		DCB6702828115C8F00AABBF0 /* ExchangeRate */ = {
 			isa = PBXGroup;
 			children = (
+				DCB6706228116D1E00AABBF0 /* DataModel */,
+				DCB6705B28116B9800AABBF0 /* Manager */,
+				DCB67058281162A800AABBF0 /* Home */,
 				DCB6702928115C8F00AABBF0 /* ExchangeRateApp.swift */,
 				DCB6702B28115C8F00AABBF0 /* ContentView.swift */,
 				DCB6702D28115C9300AABBF0 /* Assets.xcassets */,
@@ -131,6 +146,33 @@
 				DCB6704B28115C9300AABBF0 /* ExchangeRateUITestsLaunchTests.swift */,
 			);
 			path = ExchangeRateUITests;
+			sourceTree = "<group>";
+		};
+		DCB67058281162A800AABBF0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				DCB670592811631800AABBF0 /* LiveRateView.swift */,
+				DCB6706028116CD300AABBF0 /* LiveRateViewModel.swift */,
+				DCB67065281192AE00AABBF0 /* LiveRatesClient.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		DCB6705B28116B9800AABBF0 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				DCB6705C28116BD400AABBF0 /* ClientManager.swift */,
+				DCB6705E28116C3900AABBF0 /* APIManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		DCB6706228116D1E00AABBF0 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				DCB6706328116D3500AABBF0 /* LatestRateDataModel.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,10 +305,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCB6705A2811631800AABBF0 /* LiveRateView.swift in Sources */,
 				DCB6703628115C9300AABBF0 /* ExchangeRate.xcdatamodeld in Sources */,
+				DCB6706128116CD300AABBF0 /* LiveRateViewModel.swift in Sources */,
+				DCB6705D28116BD400AABBF0 /* ClientManager.swift in Sources */,
+				DCB67066281192AE00AABBF0 /* LiveRatesClient.swift in Sources */,
 				DCB6703328115C9300AABBF0 /* Persistence.swift in Sources */,
 				DCB6702C28115C8F00AABBF0 /* ContentView.swift in Sources */,
 				DCB6702A28115C8F00AABBF0 /* ExchangeRateApp.swift in Sources */,
+				DCB6706428116D3500AABBF0 /* LatestRateDataModel.swift in Sources */,
+				DCB6705F28116C3900AABBF0 /* APIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
