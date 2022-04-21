@@ -1,0 +1,2 @@
+# ExchangeRate
+https://exchangerate.host/#/
