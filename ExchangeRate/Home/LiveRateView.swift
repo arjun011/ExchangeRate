@@ -35,17 +35,23 @@ struct LiveRateView: View {
                                     
                                     self.showHistoricalRateView.toggle()
                                 }
-                        
+                            
                         }
                     }
                     
                 }.listStyle(.grouped)
-                    .onAppear {
+                    .refreshable {
                         Task {
-                            await self.model.retriveLatestRatesSync(base: "USD")
+                            await self.model.retriveLatestRatesSync(base: defaultBaseCurrency)
                         }
                     }
+                
+            }.onAppear {
+                Task {
+                    await self.model.retriveLatestRatesSync(base: "USD")
+                }
             }
+            
             .navigationTitle("Latest Rates")
         }
     }
