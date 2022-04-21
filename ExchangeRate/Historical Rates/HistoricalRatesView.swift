@@ -11,11 +11,35 @@ struct HistoricalRatesView: View {
     
     var selectedCurrency:LiveRateViewRequestDataModel?
     @StateObject private var model = HistoricalRatesOO()
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         
         VStack(alignment: .center, spacing: 10) {
             
+            HStack(alignment: .center) {
+                
+                Button {
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Image(systemName: "chevron.backward")
+                }
+                
+                Spacer()
+                VStack {
+                    HStack(alignment: .center, spacing: 2, content: {
+                        Text(selectedCurrency?.base ?? "")
+                        Image(systemName: "circle.fill")
+                            .font(.system(size: 10, weight: .regular))
+                        Text(selectedCurrency?.symbol ?? "")
+                    }).font(.system(size: 20, weight: .medium))
+                }
+                
+                Spacer()
+                
+                
+            }.padding(.horizontal)
+
             List {
                 
                 Section("Historical Rates") {
@@ -29,6 +53,7 @@ struct HistoricalRatesView: View {
                     }
                 }
             }.listStyle(.grouped)
+            .navigationBarHidden(true)
             
         }.onAppear {
             Task {
