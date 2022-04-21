@@ -21,21 +21,10 @@ struct HistoricalRatesView: View {
                 Section("Historical Rates") {
                     ForEach(model.ratesList?.keys.sorted().reversed() ?? [String:[String: Double]]().keys.sorted(), id: \.self) { key in
                         
+                        
                         let rateValue = self.model.getKeyValueOfRates(key: key)
-                        
-                        
-                        HStack(alignment: .center, content: {
-                            
-                            Text(rateValue.0).fontWeight(.semibold)
-                            
-                            Spacer()
-                            
-                            Text(String(format: "%.4f", rateValue.1 ))
-                            
-                            Image(systemName: "chevron.right")
-                                .padding(.horizontal, 10)
-                            
-                        })
+
+                        RateCellView(title: rateValue.0, value: rateValue.1)
 
                     }
                 }
