@@ -41,10 +41,7 @@ struct HistoricalRatesView: View {
                 }
             }.listStyle(.grouped)
             
-        }
-        .ignoresSafeArea(edges: .bottom)
-        .onAppear {
-            
+        }.onAppear {
             Task {
                 await self.model.retriveHistoricalRates(base: selectedCurrency?.base ?? "" , symbol: selectedCurrency?.symbol ?? "")
             }

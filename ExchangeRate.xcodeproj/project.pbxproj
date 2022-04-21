@@ -28,6 +28,7 @@
 		DCFC4F262811A33D00B02CFD /* HistoricalRatesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F252811A33D00B02CFD /* HistoricalRatesDataModel.swift */; };
 		DCFC4F282811A39A00B02CFD /* HistoricalRatesInputParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F272811A39A00B02CFD /* HistoricalRatesInputParameter.swift */; };
 		DCFC4F2A2811A85800B02CFD /* LiveRateViewRequestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F292811A85800B02CFD /* LiveRateViewRequestDataModel.swift */; };
+		DCFC4F2D2811CA1500B02CFD /* RateCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F2C2811CA1500B02CFD /* RateCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		DCFC4F252811A33D00B02CFD /* HistoricalRatesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalRatesDataModel.swift; sourceTree = "<group>"; };
 		DCFC4F272811A39A00B02CFD /* HistoricalRatesInputParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalRatesInputParameter.swift; sourceTree = "<group>"; };
 		DCFC4F292811A85800B02CFD /* LiveRateViewRequestDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRateViewRequestDataModel.swift; sourceTree = "<group>"; };
+		DCFC4F2C2811CA1500B02CFD /* RateCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		DCB6702828115C8F00AABBF0 /* ExchangeRate */ = {
 			isa = PBXGroup;
 			children = (
+				DCFC4F2B2811C9FB00B02CFD /* Cell View */,
 				DCB6705B28116B9800AABBF0 /* Manager */,
 				DCB6706228116D1E00AABBF0 /* DataModel */,
 				DCB67058281162A800AABBF0 /* Home */,
@@ -199,6 +202,14 @@
 				DCFC4F232811A2E000B02CFD /* HistoricalRatesClient.swift */,
 			);
 			path = "Historical Rates";
+			sourceTree = "<group>";
+		};
+		DCFC4F2B2811C9FB00B02CFD /* Cell View */ = {
+			isa = PBXGroup;
+			children = (
+				DCFC4F2C2811CA1500B02CFD /* RateCellView.swift */,
+			);
+			path = "Cell View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,6 +351,7 @@
 				DCFC4F262811A33D00B02CFD /* HistoricalRatesDataModel.swift in Sources */,
 				DCB67066281192AE00AABBF0 /* LiveRatesClient.swift in Sources */,
 				DCFC4F2A2811A85800B02CFD /* LiveRateViewRequestDataModel.swift in Sources */,
+				DCFC4F2D2811CA1500B02CFD /* RateCellView.swift in Sources */,
 				DCFC4F242811A2E000B02CFD /* HistoricalRatesClient.swift in Sources */,
 				DCB6703328115C9300AABBF0 /* Persistence.swift in Sources */,
 				DCB6702C28115C8F00AABBF0 /* ContentView.swift in Sources */,

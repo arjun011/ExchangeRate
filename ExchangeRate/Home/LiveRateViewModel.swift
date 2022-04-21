@@ -12,6 +12,7 @@ class LiveRateViewModel: ObservableObject {
     
     @Published var latestRates:LatestRatesDataModel = LatestRatesDataModel()
     @Published var ratesList:[String: Double] = [String: Double]()
+    @Published var historicalRatesRequest:LiveRateViewRequestDataModel?
     
     private let client = LiveRatesClient()
     
@@ -37,4 +38,9 @@ class LiveRateViewModel: ObservableObject {
         }
     }
     
+    func setHistoricalRatesRequest(base: String?, symbol: String?, symbolValue: Double?){
+        self.historicalRatesRequest = LiveRateViewRequestDataModel(base: base, symbol: symbol, symbolValue: symbolValue)
+    }
+    
+
 }

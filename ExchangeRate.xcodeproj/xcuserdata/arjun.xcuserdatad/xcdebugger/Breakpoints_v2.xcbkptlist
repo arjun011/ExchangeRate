@@ -14,13 +14,13 @@
             filePath = "ExchangeRate/Home/LiveRateViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "retriveLatestRatesSync(base:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "2C7A924B-108C-4687-AA23-6ECC130F468A - e7ae8b958af02722"
+                  uuid = "2C7A924B-108C-4687-AA23-6ECC130F468A - e7ae8b958af038cd"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -30,12 +30,12 @@
                   urlString = "file:///Users/arjun/Desktop/ExchangeRate/ExchangeRate/Home/LiveRateViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
                   offsetFromSymbolStart = "572">
                </Location>
                <Location
-                  uuid = "2C7A924B-108C-4687-AA23-6ECC130F468A - e7ae8b958af02722"
+                  uuid = "2C7A924B-108C-4687-AA23-6ECC130F468A - e7ae8b958af038cd"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -45,8 +45,8 @@
                   urlString = "file:///Users/arjun/Desktop/ExchangeRate/ExchangeRate/Home/LiveRateViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
                   offsetFromSymbolStart = "584">
                </Location>
             </Locations>
@@ -62,8 +62,8 @@
             filePath = "ExchangeRate/Home/LiveRateViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "retriveLatestRatesSync(base:)"
             landmarkType = "7">
          </BreakpointContent>

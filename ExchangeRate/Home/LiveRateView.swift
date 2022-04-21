@@ -9,11 +9,17 @@ import SwiftUI
 
 struct LiveRateView: View {
     @StateObject var model = LiveRateViewModel()
+    @State var showHistoricalRateView:Bool = false
+    @State var defaultBaseCurrency:String = "USD"
+    
     var body: some View {
         
         NavigationView {
             
             VStack(alignment: .center, spacing: 0) {
+                
+                NavigationLink(destination: HistoricalRatesView(selectedCurrency: self.model.historicalRatesRequest), isActive: $showHistoricalRateView,
+                               label: { })
                 
                 List {
                     
@@ -21,19 +27,14 @@ struct LiveRateView: View {
                         
                         ForEach(model.ratesList.keys.sorted(), id: \.self) { key in
                             
-                            HStack(alignment: .center, content: {
-                                
-                                Text(key).fontWeight(.semibold)
-                                
-                                Spacer()
-                                
-                                Text(String(format: "%.4f", model.ratesList[key] ?? 0.0))
-                                
-                                Image(systemName: "chevron.right")
-                                    .padding(.horizontal, 10)
-                                
-                            })
-                           
+                            RateCellView(title: key, value: model.ratesList[key], isDetail: true)
+                                .contentShape(RoundedRectangle(cornerRadius: 0))
+                                .onTapGesture {
+                                    
+                                    self.model.setHistoricalRatesRequest(base: self.model.latestRates.base ?? defaultBaseCurrency, symbol: key, symbolValue: (model.ratesList[key] ?? 0.0))
+                                    
+                                    self.showHistoricalRateView.toggle()
+                                }
                         
                         }
                     }
