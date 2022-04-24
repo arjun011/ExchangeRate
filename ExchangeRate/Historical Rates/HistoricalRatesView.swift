@@ -56,32 +56,32 @@ struct HistoricalRatesView: View {
             VStack(alignment: .center) {
                 
                 Picker("What is your favorite color?", selection: self.$model.rateHistoryInMonth) {
-                                Text("1M").tag(1)
-                                Text("6M").tag(6)
-                                Text("1Y").tag(12)
-                            }
-                            .pickerStyle(.segmented)
-                            .onChange(of: self.model.rateHistoryInMonth) { tag in
-                            
-                                Task {
-                                    await self.model.retriveHistoricalRates(base: selectedCurrency?.base ?? "" , symbol: selectedCurrency?.symbol ?? "")
-                                }
-                                
-                            }
+                    Text("1M").tag(1)
+                    Text("6M").tag(6)
+                    Text("1Y").tag(12)
+                }
+                .pickerStyle(.segmented)
+                .onChange(of: self.model.rateHistoryInMonth) { tag in
+                    
+                    Task {
+                        await self.model.retriveHistoricalRates(base: selectedCurrency?.base ?? "" , symbol: selectedCurrency?.symbol ?? "")
+                    }
+                    
+                }
             }.padding()
-
+            
             List {
                 
                 Section("Historical Rates") {
                     ForEach(model.ratesList.keys.sorted().reversed() , id: \.self) { key in
                         
                         let rateValue = self.model.getKeyValueOfRates(key: key)
-
+                        
                         RateCellView(title: rateValue.0, value: rateValue.1)
                     }
                 }
             }.listStyle(.grouped)
-            .navigationBarHidden(true)
+                .navigationBarHidden(true)
             
         }.onAppear {
             Task {

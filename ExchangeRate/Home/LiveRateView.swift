@@ -11,6 +11,7 @@ struct LiveRateView: View {
     @StateObject var model = LiveRateViewModel()
     @State var showHistoricalRateView:Bool = false
     @State var defaultBaseCurrency:String = "USD"
+    @State var updateBaseCurrency:Bool = false
     
     var body: some View {
         
@@ -44,7 +45,6 @@ struct LiveRateView: View {
                         }
                     }
                     
-                    
                     Section("Live Rate") {
                         
                         ForEach(model.ratesList.keys.sorted(), id: \.self) { key in
@@ -70,16 +70,14 @@ struct LiveRateView: View {
                 
             }.onAppear {
                 Task {
-                    await self.model.retriveLatestRatesSync(base: "USD")
+                    await self.model.retriveLatestRatesSync(base: defaultBaseCurrency)
                 }
-            }
-            
-            .navigationTitle("Latest Rates")
+            }.navigationTitle("Latest Rates")
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     
                     Button {
-                       // updateBaseCurrency.toggle()
+                        updateBaseCurrency.toggle()
                     } label: {
                         
                         VStack(alignment: .center, spacing: 5) {
@@ -91,8 +89,24 @@ struct LiveRateView: View {
                             }
                         }
                     }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    
+                    NavigationLink(destination: ExchangeRateView()) {
+                        Image(systemName: "arrow.left.arrow.right")
+                    }
                     
                 }
+            }
+            .sheet(isPresented: $updateBaseCurrency) {
+                
+                BaseCurrencyView(latestRates: self.$model.latestRates, defaultBaseCurrency: $defaultBaseCurrency)
+                    .onDisappear {
+                        Task {
+                            await self.model.retriveLatestRatesSync(base: defaultBaseCurrency)
+                        }
+                    }
             }
         }
     }

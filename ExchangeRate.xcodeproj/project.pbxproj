@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC718FCD28155AC600DB94E4 /* BaseCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC718FCC28155AC600DB94E4 /* BaseCurrencyView.swift */; };
+		DC718FD02815606B00DB94E4 /* ExchangeRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC718FCF2815606B00DB94E4 /* ExchangeRateView.swift */; };
 		DCB6702A28115C8F00AABBF0 /* ExchangeRateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6702928115C8F00AABBF0 /* ExchangeRateApp.swift */; };
 		DCB6702C28115C8F00AABBF0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6702B28115C8F00AABBF0 /* ContentView.swift */; };
 		DCB6702E28115C9300AABBF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCB6702D28115C9300AABBF0 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC718FCC28155AC600DB94E4 /* BaseCurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCurrencyView.swift; sourceTree = "<group>"; };
+		DC718FCF2815606B00DB94E4 /* ExchangeRateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateView.swift; sourceTree = "<group>"; };
 		DCB6702628115C8F00AABBF0 /* ExchangeRate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCB6702928115C8F00AABBF0 /* ExchangeRateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateApp.swift; sourceTree = "<group>"; };
 		DCB6702B28115C8F00AABBF0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +105,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC718FCB28155AAA00DB94E4 /* BaseCurrency View */ = {
+			isa = PBXGroup;
+			children = (
+				DC718FCC28155AC600DB94E4 /* BaseCurrencyView.swift */,
+			);
+			path = "BaseCurrency View";
+			sourceTree = "<group>";
+		};
+		DC718FCE28155ED800DB94E4 /* ExchangeRateView */ = {
+			isa = PBXGroup;
+			children = (
+				DC718FCF2815606B00DB94E4 /* ExchangeRateView.swift */,
+			);
+			path = ExchangeRateView;
+			sourceTree = "<group>";
+		};
 		DCB6701D28115C8F00AABBF0 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +144,8 @@
 		DCB6702828115C8F00AABBF0 /* ExchangeRate */ = {
 			isa = PBXGroup;
 			children = (
+				DC718FCE28155ED800DB94E4 /* ExchangeRateView */,
+				DC718FCB28155AAA00DB94E4 /* BaseCurrency View */,
 				DCFC4F2B2811C9FB00B02CFD /* Cell View */,
 				DCB6705B28116B9800AABBF0 /* Manager */,
 				DCB6706228116D1E00AABBF0 /* DataModel */,
@@ -348,6 +370,7 @@
 			files = (
 				DCB6705A2811631800AABBF0 /* LiveRateView.swift in Sources */,
 				DCB6703628115C9300AABBF0 /* ExchangeRate.xcdatamodeld in Sources */,
+				DC718FD02815606B00DB94E4 /* ExchangeRateView.swift in Sources */,
 				DCB6706128116CD300AABBF0 /* LiveRateViewModel.swift in Sources */,
 				DCB6705D28116BD400AABBF0 /* ClientManager.swift in Sources */,
 				DCFC4F282811A39A00B02CFD /* HistoricalRatesInputParameter.swift in Sources */,
@@ -358,6 +381,7 @@
 				DCFC4F2D2811CA1500B02CFD /* RateCellView.swift in Sources */,
 				DCFC4F242811A2E000B02CFD /* HistoricalRatesClient.swift in Sources */,
 				DCB6703328115C9300AABBF0 /* Persistence.swift in Sources */,
+				DC718FCD28155AC600DB94E4 /* BaseCurrencyView.swift in Sources */,
 				DCB6702C28115C8F00AABBF0 /* ContentView.swift in Sources */,
 				DCB6702A28115C8F00AABBF0 /* ExchangeRateApp.swift in Sources */,
 				DCB6706428116D3500AABBF0 /* LatestRateDataModel.swift in Sources */,
