@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import StockCharts
 struct HistoricalRatesView: View {
     
     var selectedCurrency:LiveRateViewRequestDataModel?
@@ -56,27 +55,19 @@ struct HistoricalRatesView: View {
             
             VStack(alignment: .center) {
                 
-                Picker("What is your favorite color?", selection: self.$model.favoriteColor) {
+                Picker("What is your favorite color?", selection: self.$model.rateHistoryInMonth) {
                                 Text("1M").tag(1)
                                 Text("6M").tag(6)
                                 Text("1Y").tag(12)
                             }
                             .pickerStyle(.segmented)
-                            .onChange(of: self.model.favoriteColor) { tag in
+                            .onChange(of: self.model.rateHistoryInMonth) { tag in
                             
                                 Task {
                                     await self.model.retriveHistoricalRates(base: selectedCurrency?.base ?? "" , symbol: selectedCurrency?.symbol ?? "")
                                 }
                                 
                             }
-                
-                LineChartView(
-                    lineChartController:
-                        LineChartController(prices: self.model.currencyRateList, dates: self.model.currencyRateDateList, labelColor: Color.blue, indicatorPointColor: Color.blue, showingIndicatorLineColor: Color.green, flatTrendLineColor: Color.green, uptrendLineColor: Color.green, downtrendLineColor: Color.green, dragGesture: true)
-                ).frame(maxWidth: .infinity, alignment: .center)
-                .aspectRatio(2, contentMode: .fit)
-                
-                
             }.padding()
 
             List {

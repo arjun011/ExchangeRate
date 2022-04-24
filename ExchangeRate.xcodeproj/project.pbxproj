@@ -29,7 +29,6 @@
 		DCFC4F282811A39A00B02CFD /* HistoricalRatesInputParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F272811A39A00B02CFD /* HistoricalRatesInputParameter.swift */; };
 		DCFC4F2A2811A85800B02CFD /* LiveRateViewRequestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F292811A85800B02CFD /* LiveRateViewRequestDataModel.swift */; };
 		DCFC4F2D2811CA1500B02CFD /* RateCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F2C2811CA1500B02CFD /* RateCellView.swift */; };
-		DCFC4F302811DD9300B02CFD /* StockCharts in Frameworks */ = {isa = PBXBuildFile; productRef = DCFC4F2F2811DD9300B02CFD /* StockCharts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCFC4F302811DD9300B02CFD /* StockCharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +229,6 @@
 			);
 			name = ExchangeRate;
 			packageProductDependencies = (
-				DCFC4F2F2811DD9300B02CFD /* StockCharts */,
 			);
 			productName = ExchangeRate;
 			productReference = DCB6702628115C8F00AABBF0 /* ExchangeRate.app */;
@@ -306,7 +303,6 @@
 			);
 			mainGroup = DCB6701D28115C8F00AABBF0;
 			packageReferences = (
-				DCFC4F2E2811DD9300B02CFD /* XCRemoteSwiftPackageReference "StockCharts" */,
 			);
 			productRefGroup = DCB6702728115C8F00AABBF0 /* Products */;
 			projectDirPath = "";
@@ -685,25 +681,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		DCFC4F2E2811DD9300B02CFD /* XCRemoteSwiftPackageReference "StockCharts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/denniscm190/StockCharts.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		DCFC4F2F2811DD9300B02CFD /* StockCharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DCFC4F2E2811DD9300B02CFD /* XCRemoteSwiftPackageReference "StockCharts" */;
-			productName = StockCharts;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		DCB6703428115C9300AABBF0 /* ExchangeRate.xcdatamodeld */ = {
