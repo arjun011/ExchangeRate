@@ -93,7 +93,7 @@ struct LiveRateView: View {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     
-                    NavigationLink(destination: ExchangeRateView(baseCurrency: self.defaultBaseCurrency, currencyList: self.$model.ratesList)) {
+                    NavigationLink(destination: ExchangeRateView(currencyList: self.$model.ratesList, currencyFrom: self.$defaultBaseCurrency)) {
                         Image(systemName: "arrow.left.arrow.right")
                     }
                     
