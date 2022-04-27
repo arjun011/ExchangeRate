@@ -10,26 +10,29 @@ import SwiftUI
 struct ExchangeRateView: View {
     @Binding var currencyList:[String: Double]
     @Binding var currencyFrom:String
-    @StateObject var model = ExchangeRateViewModel()
+    @StateObject private var model = ExchangeRateViewModel()
+    @State var showAnimationOnCurrencyDetail:Bool = false
     
     var body: some View {
         
         VStack(alignment: .leading) {
             
-            VStack(alignment: .leading, spacing: 10) {
+            if showAnimationOnCurrencyDetail {
+                VStack(alignment: .leading, spacing: 10) {
 
-                Text("1 \(self.model.exchangeRateValue?.query?.from ?? "") equels")
-                    .font(.title)
-                
-                Text("\(self.model.exchangeRateValue?.info?.rate ?? 0) \(self.model.exchangeRateValue?.query?.to ?? "")" )
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                
-                Text(self.model.exchangeRateValue?.date ?? "")
-                    .foregroundColor(.gray)
-                
-            }.padding()
-            
+                    Text("1 \(self.model.exchangeRateValue?.query?.from ?? "") equals")
+                        .font(.title)
+                    
+                    Text("\(self.model.exchangeRateValue?.info?.rate ?? 0) \(self.model.exchangeRateValue?.query?.to ?? "")" )
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                    
+                    Text(self.model.exchangeRateValue?.date ?? "")
+                        .foregroundColor(.gray)
+                    
+                }.padding()
+                    .transition(.opacity.combined(with: .slide))
+            }
             
             Form {
                 Section(header: Text("Convert Currency")) {
@@ -71,13 +74,16 @@ struct ExchangeRateView: View {
                     
                     Text(self.model.txtCurrencyTo, format: .currency(code: self.model.currencyTo))
                 }
-            }
+            }.animation(.default, value: showAnimationOnCurrencyDetail)
             
         }.onAppear {
             
             self.model.txtCurrencyFrom = "1"
             Task {
                 await self.model.exchangeRates(from: self.currencyFrom, to: self.model.currencyTo, ammount: "1")
+            }
+            withAnimation(.easeInOut(duration: 0.36).delay(0.3)) {
+                self.showAnimationOnCurrencyDetail = true
             }
         }
         
