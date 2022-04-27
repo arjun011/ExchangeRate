@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B190E0C3-4A68-4422-8FC9-31C87DDA68A1"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8EA16C28-3383-4CCC-8346-8647B444C0EF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExchangeRateTests/ExchangeRateTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "testRetriveLatestRateListAPI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8EA16C28-3383-4CCC-8346-8647B444C0EF - 1db605d0bf96a3e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for ExchangeRateTests.ExchangeRateTests.testRetriveLatestRateListAPI() async throws -&gt; ()"
+                  moduleName = "ExchangeRateTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjun/Desktop/ExchangeRate/ExchangeRateTests/ExchangeRateTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "1550">
+               </Location>
+               <Location
+                  uuid = "8EA16C28-3383-4CCC-8346-8647B444C0EF - 1db605d0bf96a3e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for ExchangeRateTests.ExchangeRateTests.testRetriveLatestRateListAPI() async throws -&gt; ()"
+                  moduleName = "ExchangeRateTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjun/Desktop/ExchangeRate/ExchangeRateTests/ExchangeRateTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "1534">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0DDEBE92-170C-49DD-94A3-B26275C46AB2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExchangeRateTests/ExchangeRateTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "testRetriveLatestRateListAPI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
