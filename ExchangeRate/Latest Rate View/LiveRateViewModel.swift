@@ -28,7 +28,7 @@ class LiveRateViewModel: ObservableObject {
                
                 self.latestRates = rates
                 
-                let updatedResult = self.updateFavouriteList(inputDict: self.latestRates.rates ?? [String: Double](), favouriteListSet: self.favouriteRateList)
+                let updatedResult = self.updateFavouriteList(inputDict: self.latestRates.rates , favouriteListSet: self.favouriteRateList)
                 
                 self.favouriteRateList = updatedResult.updatedFavouriteListSet
                 self.ratesList = updatedResult.updatedRatesDict

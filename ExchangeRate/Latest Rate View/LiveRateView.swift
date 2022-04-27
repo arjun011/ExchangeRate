@@ -11,7 +11,7 @@ struct LiveRateView: View {
     @StateObject var model = LiveRateViewModel()
     @State var showHistoricalRateView:Bool = false
     @State var defaultBaseCurrency:String = "USD"
-    @State var updateBaseCurrency:Bool = false
+    @State var showBaseCurrencyView:Bool = false
     
     var body: some View {
         
@@ -77,7 +77,7 @@ struct LiveRateView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     
                     Button {
-                        updateBaseCurrency.toggle()
+                        showBaseCurrencyView.toggle()
                     } label: {
                         
                         VStack(alignment: .center, spacing: 5) {
@@ -92,14 +92,13 @@ struct LiveRateView: View {
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    
-                    NavigationLink(destination: ExchangeRateView(currencyList: self.$model.ratesList, currencyFrom: self.$defaultBaseCurrency)) {
+                    NavigationLink(destination: ExchangeRateView(currencyList: (self.$model.latestRates.rates), currencyFrom: self.$defaultBaseCurrency)) {
                         Image(systemName: "arrow.left.arrow.right")
                     }
                     
                 }
             }
-            .sheet(isPresented: $updateBaseCurrency) {
+            .sheet(isPresented: $showBaseCurrencyView) {
                 
                 BaseCurrencyView(latestRates: self.$model.latestRates, defaultBaseCurrency: $defaultBaseCurrency)
                     .onDisappear {
@@ -108,7 +107,7 @@ struct LiveRateView: View {
                         }
                     }
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

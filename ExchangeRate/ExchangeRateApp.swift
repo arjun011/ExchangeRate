@@ -15,6 +15,7 @@ struct ExchangeRateApp: App {
         WindowGroup {
             LiveRateView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .preferredColorScheme(.light)
         }
     }
 }

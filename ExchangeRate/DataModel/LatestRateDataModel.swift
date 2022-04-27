@@ -12,7 +12,7 @@ struct LatestRatesDataModel: Codable {
     var motd: MOTD?
     var success: Bool?
     var base, date: String?
-    var rates: [String: Double]?
+    var rates: [String: Double] = [String: Double]()
 }
 
 // MARK: - MOTD

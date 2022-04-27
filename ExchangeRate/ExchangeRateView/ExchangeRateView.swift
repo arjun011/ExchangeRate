@@ -95,8 +95,7 @@ struct ExchangeRateView_Previews: PreviewProvider {
                                       "ARS": 116.624363,
                                       "AUD": 1.580224,
                                       "AWG": 2.042846,
-                                      "AZN": 1.92923
-    ]
+                                      "AZN": 1.92923]
     
     static var previews: some View {
         ExchangeRateView(currencyList: $tempCurrency, currencyFrom: .constant("AED"))

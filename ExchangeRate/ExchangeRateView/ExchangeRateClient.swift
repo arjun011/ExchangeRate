@@ -14,8 +14,6 @@ class ExchangeRateClient {
         
         let latestRatesAPI = String(format: APIConstant.exchangeRate , fristCurrency, SecondCurrency, ammount)
 
-        print(latestRatesAPI)
-        
         do {
             let request = try ClientManager.GET(latestRatesAPI)
             let (data,response) = try await URLSession.shared.data(for: request)
@@ -27,9 +25,7 @@ class ExchangeRateClient {
             return ResponseManager.success(session)
         }catch {
             
-            print(error)
             print(error.localizedDescription)
-            
             throw ValidationError.invalidServerResponse
         }
     }

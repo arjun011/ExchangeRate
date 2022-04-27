@@ -152,13 +152,13 @@
 		DCB6702828115C8F00AABBF0 /* ExchangeRate */ = {
 			isa = PBXGroup;
 			children = (
+				DCB67058281162A800AABBF0 /* Latest Rate View */,
 				DC718FCE28155ED800DB94E4 /* ExchangeRateView */,
 				DC718FCB28155AAA00DB94E4 /* BaseCurrency View */,
+				DCFC4F1C28119FD000B02CFD /* Historical Rates */,
 				DCFC4F2B2811C9FB00B02CFD /* Cell View */,
 				DCB6705B28116B9800AABBF0 /* Manager */,
 				DCB6706228116D1E00AABBF0 /* DataModel */,
-				DCB67058281162A800AABBF0 /* Home */,
-				DCFC4F1C28119FD000B02CFD /* Historical Rates */,
 				DCB6702928115C8F00AABBF0 /* ExchangeRateApp.swift */,
 				DCB6702B28115C8F00AABBF0 /* ContentView.swift */,
 				DCB6702D28115C9300AABBF0 /* Assets.xcassets */,
@@ -194,14 +194,14 @@
 			path = ExchangeRateUITests;
 			sourceTree = "<group>";
 		};
-		DCB67058281162A800AABBF0 /* Home */ = {
+		DCB67058281162A800AABBF0 /* Latest Rate View */ = {
 			isa = PBXGroup;
 			children = (
 				DCB670592811631800AABBF0 /* LiveRateView.swift */,
 				DCB6706028116CD300AABBF0 /* LiveRateViewModel.swift */,
 				DCB67065281192AE00AABBF0 /* LiveRatesClient.swift */,
 			);
-			path = Home;
+			path = "Latest Rate View";
 			sourceTree = "<group>";
 		};
 		DCB6705B28116B9800AABBF0 /* Manager */ = {

@@ -7,93 +7,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AAC974BC-DA18-40D7-AABE-9E5028204767"
+            uuid = "8EA16C28-3383-4CCC-8346-8647B444C0EF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ExchangeRate/ExchangeRateView/ExchangeRateViewModel.swift"
+            filePath = "ExchangeRateTests/ExchangeRateTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "exchangeRates(from:to:ammount:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "21F034C6-BE71-45EE-852E-15E32C782CD2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ExchangeRate/ExchangeRateView/ExchangeRateClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "exchangeRates(from:to:ammount:)"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "testRetriveLatestRateListAPI()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "21F034C6-BE71-45EE-852E-15E32C782CD2 - 1ea81be99d81e146"
+                  uuid = "8EA16C28-3383-4CCC-8346-8647B444C0EF - 1db605d0bf96a3e5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ExchangeRate.ExchangeRateClient.exchangeRates(from: Swift.String, to: Swift.String, ammount: Swift.String) async throws -&gt; ExchangeRate.ResponseManager&lt;ExchangeRate.ExchangeRateDataModel&gt;"
-                  moduleName = "ExchangeRate"
+                  symbolName = "(1) await resume partial function for ExchangeRateTests.ExchangeRateTests.testRetriveLatestRateListAPI() async throws -&gt; ()"
+                  moduleName = "ExchangeRateTests"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arjun/Desktop/ExchangeRate/ExchangeRate/ExchangeRateView/ExchangeRateClient.swift"
+                  urlString = "file:///Users/arjun/Desktop/ExchangeRate/ExchangeRateTests/ExchangeRateTests.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "2301">
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "1550">
                </Location>
                <Location
-                  uuid = "21F034C6-BE71-45EE-852E-15E32C782CD2 - 1ea81be99d81e146"
+                  uuid = "8EA16C28-3383-4CCC-8346-8647B444C0EF - 1db605d0bf96a3e5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ExchangeRate.ExchangeRateClient.exchangeRates(from: Swift.String, to: Swift.String, ammount: Swift.String) async throws -&gt; ExchangeRate.ResponseManager&lt;ExchangeRate.ExchangeRateDataModel&gt;"
-                  moduleName = "ExchangeRate"
+                  symbolName = "(1) await resume partial function for ExchangeRateTests.ExchangeRateTests.testRetriveLatestRateListAPI() async throws -&gt; ()"
+                  moduleName = "ExchangeRateTests"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arjun/Desktop/ExchangeRate/ExchangeRate/ExchangeRateView/ExchangeRateClient.swift"
+                  urlString = "file:///Users/arjun/Desktop/ExchangeRate/ExchangeRateTests/ExchangeRateTests.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "2357">
-               </Location>
-               <Location
-                  uuid = "21F034C6-BE71-45EE-852E-15E32C782CD2 - f04701fa78ce25e8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) await resume partial function for ExchangeRate.ExchangeRateClient.exchangeRates(from: Swift.String, to: Swift.String, ammount: Swift.String) async throws -&gt; ExchangeRate.ResponseManager&lt;ExchangeRate.ExchangeRateDataModel&gt;"
-                  moduleName = "ExchangeRate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arjun/Desktop/ExchangeRate/ExchangeRate/ExchangeRateView/ExchangeRateClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "3147">
-               </Location>
-               <Location
-                  uuid = "21F034C6-BE71-45EE-852E-15E32C782CD2 - f04701fa78ce25e8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) await resume partial function for ExchangeRate.ExchangeRateClient.exchangeRates(from: Swift.String, to: Swift.String, ammount: Swift.String) async throws -&gt; ExchangeRate.ResponseManager&lt;ExchangeRate.ExchangeRateDataModel&gt;"
-                  moduleName = "ExchangeRate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arjun/Desktop/ExchangeRate/ExchangeRate/ExchangeRateView/ExchangeRateClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "3203">
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "1534">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -101,65 +55,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E0102F0C-77D4-4EE5-8693-14DC8300EDDA"
+            uuid = "0DDEBE92-170C-49DD-94A3-B26275C46AB2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ExchangeRate/ExchangeRateView/ExchangeRateClient.swift"
+            filePath = "ExchangeRateTests/ExchangeRateTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "exchangeRates(from:to:ammount:)"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "testRetriveLatestRateListAPI()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E0102F0C-77D4-4EE5-8693-14DC8300EDDA - 1ea81be99d81e123"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ExchangeRate.ExchangeRateClient.exchangeRates(from: Swift.String, to: Swift.String, ammount: Swift.String) async throws -&gt; ExchangeRate.ResponseManager&lt;ExchangeRate.ExchangeRateDataModel&gt;"
-                  moduleName = "ExchangeRate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arjun/Desktop/ExchangeRate/ExchangeRate/ExchangeRateView/ExchangeRateClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "1644">
-               </Location>
-               <Location
-                  uuid = "E0102F0C-77D4-4EE5-8693-14DC8300EDDA - f04701fa78ce258d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) await resume partial function for ExchangeRate.ExchangeRateClient.exchangeRates(from: Swift.String, to: Swift.String, ammount: Swift.String) async throws -&gt; ExchangeRate.ResponseManager&lt;ExchangeRate.ExchangeRateDataModel&gt;"
-                  moduleName = "ExchangeRate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/arjun/Desktop/ExchangeRate/ExchangeRate/ExchangeRateView/ExchangeRateClient.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "2490">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5A8A57C1-2FD1-4EE4-9792-C5841FC98D65"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ExchangeRate/ExchangeRateView/ExchangeRateView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "body"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

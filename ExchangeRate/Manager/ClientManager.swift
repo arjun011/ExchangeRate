@@ -41,7 +41,7 @@ final class ClientManager {
         }
         
         let requestUrl = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
-        guard let serviceUrl = URL(string: requestUrl) else { throw ValidationError.invalidServerResponse }
+        guard let serviceUrl = URL(string: requestUrl) else { throw ValidationError.invalidUrl }
         var request = URLRequest(url: serviceUrl)
         request.httpMethod = RequestType.GET.rawValue
         request.cachePolicy = .reloadIgnoringCacheData

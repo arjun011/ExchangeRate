@@ -20,7 +20,7 @@ struct BaseCurrencyView: View {
                 
                 Section("Base Currency") {
                     
-                    ForEach((latestRates.rates ?? [String:Double]()).keys.sorted(), id: \.self) { key in
+                    ForEach((latestRates.rates).keys.sorted(), id: \.self) { key in
                         
                         HStack(alignment: .center) {
                             Text(key)

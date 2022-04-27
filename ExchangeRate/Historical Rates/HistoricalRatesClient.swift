@@ -9,7 +9,7 @@ import Foundation
 
 class HistoricalratesClient {
     
-    /// Retrive Last 52 week Historical data
+    /// Retrive Historical data
     /// - Parameters:
     ///   - input: HistoricalRatesInputParameter
     ///   - response: HistoricalRatesDataModel
