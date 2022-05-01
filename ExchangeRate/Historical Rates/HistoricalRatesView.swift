@@ -27,6 +27,7 @@ struct HistoricalRatesView: View {
                 }
                 
                 Spacer()
+                
                 VStack {
                     HStack(alignment: .center, spacing: 2, content: {
                         Text(selectedCurrency?.base ?? "")
