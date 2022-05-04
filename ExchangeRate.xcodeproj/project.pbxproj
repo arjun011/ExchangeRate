@@ -28,6 +28,8 @@
 		DCB6706128116CD300AABBF0 /* LiveRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6706028116CD300AABBF0 /* LiveRateViewModel.swift */; };
 		DCB6706428116D3500AABBF0 /* LatestRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6706328116D3500AABBF0 /* LatestRateDataModel.swift */; };
 		DCB67066281192AE00AABBF0 /* LiveRatesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB67065281192AE00AABBF0 /* LiveRatesClient.swift */; };
+		DCE158912823436200A9F26C /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE158902823436200A9F26C /* HelperManager.swift */; };
+		DCE15893282347D500A9F26C /* LatestRateCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE15892282347D500A9F26C /* LatestRateCellView.swift */; };
 		DCFC4F1E28119FFD00B02CFD /* HistoricalRatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F1D28119FFD00B02CFD /* HistoricalRatesView.swift */; };
 		DCFC4F222811A1C700B02CFD /* HistricalRatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F212811A1C700B02CFD /* HistricalRatesViewModel.swift */; };
 		DCFC4F242811A2E000B02CFD /* HistoricalRatesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F232811A2E000B02CFD /* HistoricalRatesClient.swift */; };
@@ -78,6 +80,8 @@
 		DCB6706028116CD300AABBF0 /* LiveRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRateViewModel.swift; sourceTree = "<group>"; };
 		DCB6706328116D3500AABBF0 /* LatestRateDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestRateDataModel.swift; sourceTree = "<group>"; };
 		DCB67065281192AE00AABBF0 /* LiveRatesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRatesClient.swift; sourceTree = "<group>"; };
+		DCE158902823436200A9F26C /* HelperManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperManager.swift; sourceTree = "<group>"; };
+		DCE15892282347D500A9F26C /* LatestRateCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestRateCellView.swift; sourceTree = "<group>"; };
 		DCFC4F1D28119FFD00B02CFD /* HistoricalRatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalRatesView.swift; sourceTree = "<group>"; };
 		DCFC4F212811A1C700B02CFD /* HistricalRatesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistricalRatesViewModel.swift; sourceTree = "<group>"; };
 		DCFC4F232811A2E000B02CFD /* HistoricalRatesClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalRatesClient.swift; sourceTree = "<group>"; };
@@ -211,6 +215,7 @@
 			children = (
 				DCB6705C28116BD400AABBF0 /* ClientManager.swift */,
 				DCB6705E28116C3900AABBF0 /* APIManager.swift */,
+				DCE158902823436200A9F26C /* HelperManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				DCFC4F2C2811CA1500B02CFD /* RateCellView.swift */,
+				DCE15892282347D500A9F26C /* LatestRateCellView.swift */,
 			);
 			path = "Cell View";
 			sourceTree = "<group>";
@@ -384,6 +390,7 @@
 				DCB6705A2811631800AABBF0 /* LiveRateView.swift in Sources */,
 				DCB6703628115C9300AABBF0 /* ExchangeRate.xcdatamodeld in Sources */,
 				DC718FD02815606B00DB94E4 /* ExchangeRateView.swift in Sources */,
+				DCE158912823436200A9F26C /* HelperManager.swift in Sources */,
 				DCB6706128116CD300AABBF0 /* LiveRateViewModel.swift in Sources */,
 				DCB6705D28116BD400AABBF0 /* ClientManager.swift in Sources */,
 				DC1C88252815F0FB00692DF1 /* ExchangeRateViewModel.swift in Sources */,
@@ -395,6 +402,7 @@
 				DCFC4F2A2811A85800B02CFD /* LiveRateViewRequestDataModel.swift in Sources */,
 				DCFC4F2D2811CA1500B02CFD /* RateCellView.swift in Sources */,
 				DCFC4F242811A2E000B02CFD /* HistoricalRatesClient.swift in Sources */,
+				DCE15893282347D500A9F26C /* LatestRateCellView.swift in Sources */,
 				DCB6703328115C9300AABBF0 /* Persistence.swift in Sources */,
 				DC718FCD28155AC600DB94E4 /* BaseCurrencyView.swift in Sources */,
 				DCB6702C28115C8F00AABBF0 /* ContentView.swift in Sources */,

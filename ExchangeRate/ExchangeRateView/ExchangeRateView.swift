@@ -38,8 +38,6 @@ struct ExchangeRateView: View {
                         .transition(.opacity.combined(with: .slide))
                 }
                 
-           
-                
                 VStack(alignment: .center) {
                     
                     Form {
@@ -87,8 +85,7 @@ struct ExchangeRateView: View {
                         }
                     }.animation(.default, value: showAnimationOnCurrencyDetail)
                     
-                }.frame(width: .infinity, height: 300, alignment: .center)
-                
+                }.frame(height: 300, alignment: .center)
                 
             }
             
@@ -98,9 +95,9 @@ struct ExchangeRateView: View {
             Task {
                 await self.model.exchangeRates(from: self.currencyFrom, to: self.model.currencyTo, ammount: "1")
             }
-          //  withAnimation(.easeInOut(duration: 0.36).delay(0.3)) {
+            withAnimation(.easeInOut(duration: 0.36).delay(0.3)) {
                 self.showAnimationOnCurrencyDetail = true
-           // }
+           }
         }
         
     }

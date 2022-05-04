@@ -32,7 +32,7 @@ struct LiveRateView: View {
                                 
                                 let rate = model.getValueFromDictionary(input: rateValue)
                                 
-                                RateCellView(title: rate.0, value: rate.1, isDetail: true)
+                                LatestRateCellView(title: rate.0, value: rate.1)
                                     .contentShape(RoundedRectangle(cornerRadius: 0))
                                     .onTapGesture {
                                         
@@ -49,7 +49,7 @@ struct LiveRateView: View {
                         
                         ForEach(model.ratesList.keys.sorted(), id: \.self) { key in
                             
-                            RateCellView(title: key, value: model.ratesList[key], isDetail: true)
+                            LatestRateCellView(title: key, value: model.ratesList[key])
                                 .contentShape(RoundedRectangle(cornerRadius: 0))
                                 .onTapGesture {
                                     
