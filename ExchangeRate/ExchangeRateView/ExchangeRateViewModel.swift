@@ -12,7 +12,7 @@ class ExchangeRateViewModel: ObservableObject {
     
     private let client = ExchangeRateClient()
     @Published var exchangeRateValue:ExchangeRateDataModel?
-    @Published var txtCurrencyFrom:String = ""
+    @Published var txtCurrencyFrom:Double = 1.0
     @Published var txtCurrencyTo:Double = 0
     @Published var currencyFrom:String = "NOK"
     @Published var currencyTo:String = "AMD"

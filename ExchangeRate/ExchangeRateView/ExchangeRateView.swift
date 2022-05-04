@@ -6,85 +6,101 @@
 //
 
 import SwiftUI
-
+import SwiftUICharts
 struct ExchangeRateView: View {
     @Binding var currencyList:[String: Double]
     @Binding var currencyFrom:String
     @StateObject private var model = ExchangeRateViewModel()
     @State var showAnimationOnCurrencyDetail:Bool = false
+    @State var currencyFromInput:Double = 0.1
+    
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+        ScrollView {
             
-            if showAnimationOnCurrencyDetail {
-                VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading) {
+                
+                if showAnimationOnCurrencyDetail {
+                    VStack(alignment: .leading, spacing: 10) {
 
-                    Text("1 \(self.model.exchangeRateValue?.query?.from ?? "") equals")
-                        .font(.title)
-                    
-                    Text("\(self.model.exchangeRateValue?.info?.rate ?? 0) \(self.model.exchangeRateValue?.query?.to ?? "")" )
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    
-                    Text(self.model.exchangeRateValue?.date ?? "")
-                        .foregroundColor(.gray)
-                    
-                }.padding()
-                    .transition(.opacity.combined(with: .slide))
-            }
-            
-            Form {
-                Section(header: Text("Convert Currency")) {
-                    TextField("Enter an amount", text: self.$model.txtCurrencyFrom)
-                        .onChange(of: self.model.txtCurrencyFrom, perform: { newValue in
-                            
-                            if Double(newValue) ?? 0 == 0 {
-                                self.model.txtCurrencyTo = 0
-                                return
-                            }
-                            Task {
-                                await self.model.exchangeRates(from: self.currencyFrom, to: self.model.currencyTo, ammount: newValue)
-                            }
-                        })
-                        .keyboardType(.decimalPad)
-                    
-                    Picker(selection: self.$currencyFrom) {
+                        Text("1 \(self.model.exchangeRateValue?.query?.from ?? "") equals")
+                            .font(.title)
                         
-                        ForEach(self.currencyList.keys.sorted(), id: \.self) { key in
-                            
-                            Text(key)
-                        }
-                    } label: {
-                        Text("From")
-                    }
-                    
-                    Picker(selection: self.$model.currencyTo) {
+                        Text("\(self.model.exchangeRateValue?.info?.rate ?? 0) \(self.model.exchangeRateValue?.query?.to ?? "")" )
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
                         
-                        ForEach(self.currencyList.keys.sorted(), id: \.self) { key in
-                            
-                            Text(key)
-                        }
-                    } label: {
-                        Text("To")
-                    }
+                        Text(self.model.exchangeRateValue?.date ?? "")
+                            .foregroundColor(.gray)
+                        
+                    }.padding()
+                        .transition(.opacity.combined(with: .slide))
                 }
                 
-                Section(header: Text("Conversion")) {
+           
+                
+                VStack(alignment: .center) {
                     
-                    Text(self.model.txtCurrencyTo, format: .currency(code: self.model.currencyTo))
-                }
-            }.animation(.default, value: showAnimationOnCurrencyDetail)
+                    Form {
+                        Section(header: Text("Convert Currency")) {
+                            
+                            TextField("Enter an amount", value: self.$model.txtCurrencyFrom, format: .currency(code: self.currencyFrom))
+                                .onChange(of: self.model.txtCurrencyFrom, perform: { newValue in
+                                    
+                                    if newValue == 0 {
+                                        self.model.txtCurrencyTo = 0
+                                        return
+                                    }
+                                    Task {
+                                        await self.model.exchangeRates(from: self.currencyFrom, to: self.model.currencyTo, ammount: "\(newValue)")
+                                    }
+                                })
+                                .keyboardType(.decimalPad)
+                            
+                            Picker(selection: self.$currencyFrom) {
+                                
+                                ForEach(self.currencyList.keys.sorted(), id: \.self) { key in
+                                    
+                                    Text(key)
+                                }
+                            } label: {
+                                Text("From")
+                            }
+                            
+                            Picker(selection: self.$model.currencyTo) {
+                                
+                                ForEach(self.currencyList.keys.sorted(), id: \.self) { key in
+                                    
+                                    Text(key)
+                                }
+                            } label: {
+                                Text("To")
+                            }
+                        }
+                        
+                        Section(header: Text("Conversion")) {
+                            
+                            
+                            
+                            Text(self.model.txtCurrencyTo, format: .currency(code: self.model.currencyTo))
+                        }
+                    }.animation(.default, value: showAnimationOnCurrencyDetail)
+                    
+                }.frame(width: .infinity, height: 300, alignment: .center)
+                
+                
+            }
             
         }.onAppear {
             
-            self.model.txtCurrencyFrom = "1"
+            self.model.txtCurrencyFrom =  1.0
             Task {
                 await self.model.exchangeRates(from: self.currencyFrom, to: self.model.currencyTo, ammount: "1")
             }
-            withAnimation(.easeInOut(duration: 0.36).delay(0.3)) {
+          //  withAnimation(.easeInOut(duration: 0.36).delay(0.3)) {
                 self.showAnimationOnCurrencyDetail = true
-            }
+           // }
         }
         
     }
