@@ -1,9 +1,9 @@
 # ExchangeRate
 https://exchangerate.host/#/
 
-    
-  ![Simulator Screen Shot - iPhone 11 - 2022-04-27 at 11 33 29](https://user-images.githubusercontent.com/16661905/165501038-c8267f50-09c9-408b-92de-c74a6a38c116.png)  ![Simulator Screen Shot - iPhone 11 - 2022-04-27 at 11 34 19](https://user-images.githubusercontent.com/16661905/165501046-5790c4d0-3fa9-4b56-ae65-aab18ab07c61.png)
+  ![Simulator Screen Shot - iPhone 11 Pro - 2022-05-05 at 13 01 46](https://user-images.githubusercontent.com/16661905/166919494-23c8d7da-c551-4cf2-9636-f08686cdaeca.png)  ![Simulator Screen Shot - iPhone 11 Pro - 2022-05-05 at 13 01 54](https://user-images.githubusercontent.com/16661905/166919489-313b66b5-e9ed-4e7b-b9db-945a91696d0b.png)
   
   
 
-![Simulator Screen Shot - iPhone 11 - 2022-04-27 at 11 33 34](https://user-images.githubusercontent.com/16661905/165501036-edc05cdd-0715-4666-baf0-ac42cefe7623.png)  ![Simulator Screen Shot - iPhone 11 - 2022-04-27 at 11 33 46](https://user-images.githubusercontent.com/16661905/165501040-dd531bac-b5dd-4282-9146-83a8bcf2d4c1.png). 
+![Simulator Screen Shot - iPhone 11 Pro - 2022-05-05 at 13 02 07](https://user-images.githubusercontent.com/16661905/166919499-f72ead3e-a300-4810-b873-c97c6009ab63.png)    ![Simulator Screen Shot - iPhone 11 Pro - 2022-05-05 at 13 02 29](https://user-images.githubusercontent.com/16661905/166919479-11ce6cd0-2ba1-45cc-9626-d4d6b0b1689b.png)
+
