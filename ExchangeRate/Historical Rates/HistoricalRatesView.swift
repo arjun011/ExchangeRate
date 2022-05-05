@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StockCharts
 struct HistoricalRatesView: View {
     
     var selectedCurrency:LiveRateViewRequestDataModel?
@@ -56,7 +57,7 @@ struct HistoricalRatesView: View {
             
             VStack(alignment: .center) {
                 
-                Picker("What is your favorite color?", selection: self.$model.rateHistoryInMonth) {
+                Picker("", selection: self.$model.rateHistoryInMonth) {
                     Text("1M").tag(1)
                     Text("6M").tag(6)
                     Text("1Y").tag(12)
@@ -69,16 +70,25 @@ struct HistoricalRatesView: View {
                     }
                     
                 }
+                
+                LineChartView(
+                    lineChartController:
+                        LineChartController(prices: self.model.lineChartData.rates, dates: self.model.lineChartData.dates, labelColor: Color.blue, indicatorPointColor: Color.blue, showingIndicatorLineColor: Color.green, flatTrendLineColor: Color.green, uptrendLineColor: Color.green, downtrendLineColor: Color.green, dragGesture: true)
+                ).frame(maxWidth: .infinity, alignment: .center)
+                .aspectRatio(2, contentMode: .fit)
+                
+                
             }.padding()
             
             List {
                 
                 Section("Historical Rates") {
-                    ForEach(model.ratesList.keys.sorted().reversed() , id: \.self) { key in
+                    
+                    ForEach(model.historicalData?.historyRate ?? [[String:Double]](), id: \.self) { value in
+
+                        let rate = self.model.getValueFromDictionary(input: value)
                         
-                        let rateValue = self.model.getKeyValueOfRates(key: key)
-                        
-                        RateCellView(title: rateValue.0, value: rateValue.1)
+                        RateCellView(title: rate.0, value: rate.1)
                     }
                 }
             }.listStyle(.grouped)

@@ -10,7 +10,6 @@
 		DC1C88252815F0FB00692DF1 /* ExchangeRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C88242815F0FB00692DF1 /* ExchangeRateViewModel.swift */; };
 		DC1C88272815F10F00692DF1 /* ExchangeRateClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C88262815F10F00692DF1 /* ExchangeRateClient.swift */; };
 		DC1C88292815F34000692DF1 /* ExchangeRateDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1C88282815F34000692DF1 /* ExchangeRateDataModel.swift */; };
-		DC6A95C6281EA2D400154701 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = DC6A95C5281EA2D400154701 /* SwiftUICharts */; };
 		DC718FCD28155AC600DB94E4 /* BaseCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC718FCC28155AC600DB94E4 /* BaseCurrencyView.swift */; };
 		DC718FD02815606B00DB94E4 /* ExchangeRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC718FCF2815606B00DB94E4 /* ExchangeRateView.swift */; };
 		DCB6702A28115C8F00AABBF0 /* ExchangeRateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB6702928115C8F00AABBF0 /* ExchangeRateApp.swift */; };
@@ -31,6 +30,7 @@
 		DCE158912823436200A9F26C /* HelperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE158902823436200A9F26C /* HelperManager.swift */; };
 		DCE15893282347D500A9F26C /* LatestRateCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE15892282347D500A9F26C /* LatestRateCellView.swift */; };
 		DCE1589528234B9D00A9F26C /* CountryPickerCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1589428234B9D00A9F26C /* CountryPickerCellView.swift */; };
+		DCE1589828234FEF00A9F26C /* StockCharts in Frameworks */ = {isa = PBXBuildFile; productRef = DCE1589728234FEF00A9F26C /* StockCharts */; };
 		DCFC4F1E28119FFD00B02CFD /* HistoricalRatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F1D28119FFD00B02CFD /* HistoricalRatesView.swift */; };
 		DCFC4F222811A1C700B02CFD /* HistricalRatesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F212811A1C700B02CFD /* HistricalRatesViewModel.swift */; };
 		DCFC4F242811A2E000B02CFD /* HistoricalRatesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCFC4F232811A2E000B02CFD /* HistoricalRatesClient.swift */; };
@@ -98,7 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC6A95C6281EA2D400154701 /* SwiftUICharts in Frameworks */,
+				DCE1589828234FEF00A9F26C /* StockCharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +271,7 @@
 			);
 			name = ExchangeRate;
 			packageProductDependencies = (
-				DC6A95C5281EA2D400154701 /* SwiftUICharts */,
+				DCE1589728234FEF00A9F26C /* StockCharts */,
 			);
 			productName = ExchangeRate;
 			productReference = DCB6702628115C8F00AABBF0 /* ExchangeRate.app */;
@@ -346,7 +346,7 @@
 			);
 			mainGroup = DCB6701D28115C8F00AABBF0;
 			packageReferences = (
-				DC6A95C4281EA2D400154701 /* XCRemoteSwiftPackageReference "ChartView" */,
+				DCE1589628234FEF00A9F26C /* XCRemoteSwiftPackageReference "StockCharts" */,
 			);
 			productRefGroup = DCB6702728115C8F00AABBF0 /* Products */;
 			projectDirPath = "";
@@ -737,21 +737,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DC6A95C4281EA2D400154701 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+		DCE1589628234FEF00A9F26C /* XCRemoteSwiftPackageReference "StockCharts" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AppPear/ChartView.git";
+			repositoryURL = "https://github.com/denniscm190/StockCharts.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DC6A95C5281EA2D400154701 /* SwiftUICharts */ = {
+		DCE1589728234FEF00A9F26C /* StockCharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC6A95C4281EA2D400154701 /* XCRemoteSwiftPackageReference "ChartView" */;
-			productName = SwiftUICharts;
+			package = DCE1589628234FEF00A9F26C /* XCRemoteSwiftPackageReference "StockCharts" */;
+			productName = StockCharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 

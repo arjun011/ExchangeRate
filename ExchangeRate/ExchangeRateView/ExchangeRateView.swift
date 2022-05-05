@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftUICharts
 struct ExchangeRateView: View {
     @Binding var currencyList:[String: Double]
     @Binding var currencyFrom:String
@@ -44,6 +43,7 @@ struct ExchangeRateView: View {
                         Section(header: Text("Convert Currency")) {
                             
                             TextField("Enter an amount", value: self.$model.txtCurrencyFrom, format: .currency(code: self.currencyFrom))
+                                .layoutPriority(1)
                                 .onChange(of: self.model.txtCurrencyFrom, perform: { newValue in
                                     
                                     if newValue == 0 {
@@ -81,8 +81,6 @@ struct ExchangeRateView: View {
                         
                         Section(header: Text("Conversion")) {
                             
-                            
-                            
                             Text(self.model.txtCurrencyTo, format: .currency(code: self.model.currencyTo))
                         }
                     }.animation(.default, value: showAnimationOnCurrencyDetail)
@@ -99,7 +97,7 @@ struct ExchangeRateView: View {
             }
             withAnimation(.easeInOut(duration: 0.36).delay(0.3)) {
                 self.showAnimationOnCurrencyDetail = true
-           }
+            }
         }
         
     }

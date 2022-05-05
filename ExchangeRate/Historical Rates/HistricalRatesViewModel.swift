@@ -11,11 +11,27 @@ class HistoricalRatesOO: ObservableObject {
     
     private let client = HistoricalratesClient()
     @Published var ratesList = [String: [String: Double]]()
+    @Published var lineChartData = (rates: [Double](), dates: [String]())
     @Published var rateHistoryInMonth = 1
+    @Published var historicalData:HistoricalRatesDataModel?
+
+    func getDataLineChartData() {
+        
+        var currencyRateList = [Double]()
+        var currencyRateDateList = [String]()
     
-    /// Get value from child dictionary
-    /// - Parameter key: Parent dictionary key
-    /// - Returns: Child dictionary value
+        let dateKeys: [String] = self.ratesList.map({ $0.key }).sorted()
+        for key in dateKeys {
+            let rateValue = self.getKeyValueOfRates(key: key)
+            currencyRateList.append(rateValue.1)
+            currencyRateDateList.append(rateValue.0)
+        }
+        
+        self.lineChartData = (currencyRateList, currencyRateDateList)
+        
+    }
+    
+ 
     func getKeyValueOfRates(key:String) -> (String, Double) {
         
         var values:Double?
@@ -27,11 +43,28 @@ class HistoricalRatesOO: ObservableObject {
         return (key, values ?? 0.0)
     }
     
+    
     /// Return past date form current date
     /// - Parameter month: - Int
     /// - Returns: Date
     func getLastYearDate(month: Int) -> Date? {
         return Calendar.current.date(byAdding: .month, value: -month, to: Date())
+    }
+    
+    /// Retrive value from dictionary
+    /// - Parameter input: [String:Double]
+    /// - Returns: (String,Double)
+    func getValueFromDictionary(input:[String:Double]) -> (String,Double) {
+        
+        var keyResult:String = ""
+        var valueResult:Double = 0.0
+        
+        for (key, value) in input {
+            keyResult = key
+            valueResult = value
+        }
+        
+        return(keyResult,valueResult)
     }
     
     
@@ -50,7 +83,9 @@ class HistoricalRatesOO: ObservableObject {
             switch response {
             case let .success(rates):
                 self.ratesList = rates.rates ?? [String: [String: Double]]()
-            
+                self.getDataLineChartData()
+                self.historicalData = rates
+                
             case let .error(error):
                 debugPrint("====>\(error)")
             case .offline:
