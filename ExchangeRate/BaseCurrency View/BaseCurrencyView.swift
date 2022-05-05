@@ -23,7 +23,7 @@ struct BaseCurrencyView: View {
                     ForEach((latestRates.rates).keys.sorted(), id: \.self) { key in
                         
                         HStack(alignment: .center) {
-                            Text(key)
+                            CountryPickerCellView(countryCode: key)
                             Spacer()
                         }.contentShape(RoundedRectangle(cornerRadius: 0))
                             .onTapGesture {
