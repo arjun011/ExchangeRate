@@ -60,7 +60,11 @@ struct ExchangeRateView: View {
                                 
                                 ForEach(self.currencyList.keys.sorted(), id: \.self) { key in
                                     
-                                    Text(key)
+                                    HStack {
+                                        Text(HelperManager.getFlag(from: key )).font(.title)
+                                        Text(key).fontWeight(.semibold)
+                                    }
+                                    
                                 }
                             } label: {
                                 Text("From")
@@ -70,7 +74,10 @@ struct ExchangeRateView: View {
                                 
                                 ForEach(self.currencyList.keys.sorted(), id: \.self) { key in
                                     
-                                    Text(key)
+                                    HStack {
+                                        Text(HelperManager.getFlag(from: key )).font(.title)
+                                        Text(key).fontWeight(.semibold)
+                                    }
                                 }
                             } label: {
                                 Text("To")
