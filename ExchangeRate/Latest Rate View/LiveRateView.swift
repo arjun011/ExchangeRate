@@ -12,7 +12,7 @@ struct LiveRateView: View {
     @State var showHistoricalRateView:Bool = false
     @State var defaultBaseCurrency:String = "USD"
     @State var showBaseCurrencyView:Bool = false
-    
+    @State var searchCurrency:String = ""
     var body: some View {
         
         NavigationView {
@@ -106,6 +106,9 @@ struct LiveRateView: View {
                             await self.model.retriveLatestRatesSync(base: defaultBaseCurrency)
                         }
                     }
+            }
+            .searchable(text: $searchCurrency) {
+                Text("Are you looking for \(searchCurrency)")
             }
         }.navigationViewStyle(StackNavigationViewStyle())
     }
