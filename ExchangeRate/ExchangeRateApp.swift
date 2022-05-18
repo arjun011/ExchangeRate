@@ -13,9 +13,12 @@ struct ExchangeRateApp: App {
 
     var body: some Scene {
         WindowGroup {
-            LiveRateView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .preferredColorScheme(.light)
+            NavigationView {
+                LiveRateView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .preferredColorScheme(.light)
+            }.navigationViewStyle(StackNavigationViewStyle())
+                
         }
     }
 }

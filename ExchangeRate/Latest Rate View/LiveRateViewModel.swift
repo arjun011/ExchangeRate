@@ -13,6 +13,24 @@ class LiveRateViewModel: ObservableObject {
     @Published var ratesList:[String: Double] = [String: Double]()
     @Published var historicalRatesRequest:LiveRateViewRequestDataModel?
     @Published var favouriteRateList = Set<[String:Double]>()
+    @Published var searchCurrency:String = ""
+    var searchResult:[String:Double] {
+        
+        get {
+            
+//            let keysArray = latestRates.rates.keys.sorted().filter{$0.contains(searchCurrency)}
+//            let result = keysArray.map { key in
+//                return [key: latestRates.rates[key] ?? 0.0]
+//            }
+            
+            let test = latestRates.rates.filter { $0.key.contains(searchCurrency)}
+            
+            return test
+        }
+        
+        
+    }
+    
     
     private let client = LiveRatesClient()
     

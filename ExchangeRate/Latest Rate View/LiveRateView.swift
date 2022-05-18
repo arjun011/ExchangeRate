@@ -12,67 +12,65 @@ struct LiveRateView: View {
     @State var showHistoricalRateView:Bool = false
     @State var defaultBaseCurrency:String = "USD"
     @State var showBaseCurrencyView:Bool = false
-    @State var searchCurrency:String = ""
+    
     var body: some View {
         
-        NavigationView {
+        VStack(alignment: .center, spacing: 0) {
             
-            VStack(alignment: .center, spacing: 0) {
+            NavigationLink(destination: HistoricalRatesView(selectedCurrency: self.model.historicalRatesRequest, favouriteRateList: $model.favouriteRateList), isActive: $showHistoricalRateView,
+                           label: { })
+            
+            List {
                 
-                NavigationLink(destination: HistoricalRatesView(selectedCurrency: self.model.historicalRatesRequest, favouriteRateList: $model.favouriteRateList), isActive: $showHistoricalRateView,
-                               label: { })
-                
-                List {
+                if self.model.favouriteRateList.count > 0 {
                     
-                    if self.model.favouriteRateList.count > 0 {
+                    Section("Favourite List") {
                         
-                        Section("Favourite List") {
+                        ForEach(Array(self.model.favouriteRateList), id: \.self) { rateValue in
                             
-                            ForEach(Array(self.model.favouriteRateList), id: \.self) { rateValue in
-                                
-                                let rate = model.getValueFromDictionary(input: rateValue)
-                                
-                                LatestRateCellView(title: rate.0, value: rate.1)
-                                    .contentShape(RoundedRectangle(cornerRadius: 0))
-                                    .onTapGesture {
-                                        
-                                        self.model.setHistoricalRatesRequest(base: self.model.latestRates.base ?? defaultBaseCurrency, symbol: rate.0, symbolValue: rate.1)
-                                        
-                                        self.showHistoricalRateView.toggle()
-                                        
-                                    }
-                            }
-                        }
-                    }
-                    
-                    Section("Live Rate") {
-                        
-                        ForEach(model.ratesList.keys.sorted(), id: \.self) { key in
+                            let rate = model.getValueFromDictionary(input: rateValue)
                             
-                            LatestRateCellView(title: key, value: model.ratesList[key])
+                            LatestRateCellView(title: rate.0, value: rate.1)
                                 .contentShape(RoundedRectangle(cornerRadius: 0))
                                 .onTapGesture {
                                     
-                                    self.model.setHistoricalRatesRequest(base: self.model.latestRates.base ?? defaultBaseCurrency, symbol: key, symbolValue: (model.ratesList[key] ?? 0.0))
+                                    self.model.setHistoricalRatesRequest(base: self.model.latestRates.base ?? defaultBaseCurrency, symbol: rate.0, symbolValue: rate.1)
                                     
                                     self.showHistoricalRateView.toggle()
+                                    
                                 }
-                            
                         }
                     }
-                    
-                }.listStyle(.grouped)
-                    .refreshable {
-                        Task {
-                            await self.model.retriveLatestRatesSync(base: defaultBaseCurrency)
-                        }
-                    }
-                
-            }.onAppear {
-                Task {
-                    await self.model.retriveLatestRatesSync(base: defaultBaseCurrency)
                 }
-            }.navigationTitle("Latest Rates")
+                
+                Section("Live Rate") {
+                    
+                    ForEach(model.ratesList.keys.sorted(), id: \.self) { key in
+                        
+                        LatestRateCellView(title: key, value: model.ratesList[key])
+                            .contentShape(RoundedRectangle(cornerRadius: 0))
+                            .onTapGesture {
+                                
+                                self.model.setHistoricalRatesRequest(base: self.model.latestRates.base ?? defaultBaseCurrency, symbol: key, symbolValue: (model.ratesList[key] ?? 0.0))
+                                
+                                self.showHistoricalRateView.toggle()
+                            }
+                        
+                    }
+                }
+                
+            }.listStyle(.grouped)
+                .refreshable {
+                    Task {
+                        await self.model.retriveLatestRatesSync(base: defaultBaseCurrency)
+                    }
+                }
+            
+        }.onAppear {
+            Task {
+                await self.model.retriveLatestRatesSync(base: defaultBaseCurrency)
+            }
+        }.navigationTitle("Latest Rates")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     
@@ -97,6 +95,19 @@ struct LiveRateView: View {
                     }
                     
                 }
+            }.searchable(text: self.$model.searchCurrency) {
+                
+                ForEach(self.model.searchResult.keys.sorted(), id: \.self) { key in
+                    
+                    LatestRateCellView(title: key, value: model.searchResult[key])
+                        .contentShape(RoundedRectangle(cornerRadius: 0))
+                        .onTapGesture {
+                            
+                            self.model.setHistoricalRatesRequest(base: self.model.latestRates.base ?? defaultBaseCurrency, symbol: key, symbolValue: (model.ratesList[key] ?? 0.0))
+                            
+                            self.showHistoricalRateView.toggle()
+                        }
+                }
             }
             .sheet(isPresented: $showBaseCurrencyView) {
                 
@@ -107,10 +118,7 @@ struct LiveRateView: View {
                         }
                     }
             }
-            .searchable(text: $searchCurrency) {
-                Text("Are you looking for \(searchCurrency)")
-            }
-        }.navigationViewStyle(StackNavigationViewStyle())
+        
     }
 }
 

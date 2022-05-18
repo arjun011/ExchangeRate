@@ -19,42 +19,6 @@ struct HistoricalRatesView: View {
         
         VStack(alignment: .center, spacing: 10) {
             
-            HStack(alignment: .center) {
-                
-                Button {
-                    presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Image(systemName: "chevron.backward")
-                }
-                
-                Spacer()
-                
-                VStack {
-                    HStack(alignment: .center, spacing: 2, content: {
-                        Text(selectedCurrency?.base ?? "")
-                        Image(systemName: "circle.fill")
-                            .font(.system(size: 10, weight: .regular))
-                        Text(selectedCurrency?.symbol ?? "")
-                    }).font(.system(size: 20, weight: .medium))
-                }
-                
-                Spacer()
-                
-                Button {
-                    self.isFavourite.toggle()
-                    if self.isFavourite {
-                        self.favouriteRateList.insert([selectedCurrency?.symbol ?? "":selectedCurrency?.symbolValue ?? 00])
-                    }else {
-                        self.favouriteRateList.remove([selectedCurrency?.symbol ?? "":selectedCurrency?.symbolValue ?? 00])
-                    }
-                } label: {
-                    Image(systemName: isFavourite ? "star.fill" : "star")
-                    
-                }.font(.system(size: 25, weight: .medium))
-                
-                
-            }.padding(.horizontal)
-            
             VStack(alignment: .center) {
                 
                 Picker("", selection: self.$model.rateHistoryInMonth) {
@@ -75,7 +39,7 @@ struct HistoricalRatesView: View {
                     lineChartController:
                         LineChartController(prices: self.model.lineChartData.rates, dates: self.model.lineChartData.dates, labelColor: Color.blue, indicatorPointColor: Color.blue, showingIndicatorLineColor: Color.green, flatTrendLineColor: Color.green, uptrendLineColor: Color.green, downtrendLineColor: Color.green, dragGesture: true)
                 ).frame(maxWidth: .infinity, alignment: .center)
-                .aspectRatio(2, contentMode: .fit)
+                    .aspectRatio(2, contentMode: .fit)
                 
                 
             }.padding()
@@ -85,14 +49,40 @@ struct HistoricalRatesView: View {
                 Section("Historical Rates") {
                     
                     ForEach(model.historicalData?.historyRate ?? [[String:Double]](), id: \.self) { value in
-
+                        
                         let rate = self.model.getValueFromDictionary(input: value)
                         
                         RateCellView(title: rate.0, value: rate.1)
                     }
                 }
             }.listStyle(.grouped)
-                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle(Text(selectedCurrency?.base ?? "") + Text("*") +
+                                  Text(selectedCurrency?.symbol ?? ""))
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Image(systemName: "chevron.backward")
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        
+                        Button {
+                            self.isFavourite.toggle()
+                            if self.isFavourite {
+                                self.favouriteRateList.insert([selectedCurrency?.symbol ?? "":selectedCurrency?.symbolValue ?? 00])
+                            }else {
+                                self.favouriteRateList.remove([selectedCurrency?.symbol ?? "":selectedCurrency?.symbolValue ?? 00])
+                            }
+                        } label: {
+                            Image(systemName: isFavourite ? "star.fill" : "star")
+                            
+                        }
+                    }
+                }
             
         }.onAppear {
             Task {
@@ -102,7 +92,7 @@ struct HistoricalRatesView: View {
             if favouriteRateList.firstIndex(of: [selectedCurrency?.symbol ?? "":selectedCurrency?.symbolValue ?? 00]) != nil {
                 self.isFavourite = true
             }
-            
+        
         }
     }
 }
