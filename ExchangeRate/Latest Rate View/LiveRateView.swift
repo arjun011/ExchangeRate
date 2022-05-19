@@ -70,7 +70,8 @@ struct LiveRateView: View {
             Task {
                 await self.model.retriveLatestRatesSync(base: defaultBaseCurrency)
             }
-        }.navigationTitle("Latest Rates")
+        }.navigationBarBackButtonHidden(true)
+        .navigationTitle("Latest Rates")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     

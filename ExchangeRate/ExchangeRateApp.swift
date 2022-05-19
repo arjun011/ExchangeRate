@@ -14,7 +14,7 @@ struct ExchangeRateApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                LiveRateView()
+                SplashScreenView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .preferredColorScheme(.light)
             }.navigationViewStyle(StackNavigationViewStyle())
