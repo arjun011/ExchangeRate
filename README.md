@@ -1,6 +1,7 @@
 # ExchangeRate
 https://exchangerate.host/#/
 
+
 ![ezgif-1-34a055d896](https://user-images.githubusercontent.com/16661905/169412476-8a45130b-cf5a-4f68-b6f9-bc5181618870.gif)
 
 
@@ -9,4 +10,3 @@ https://exchangerate.host/#/
   
 
 ![Simulator Screen Shot - iPhone 11 Pro - 2022-05-05 at 13 02 07](https://user-images.githubusercontent.com/16661905/166919499-f72ead3e-a300-4810-b873-c97c6009ab63.png)    ![Simulator Screen Shot - iPhone 11 Pro - 2022-05-05 at 13 02 29](https://user-images.githubusercontent.com/16661905/166919479-11ce6cd0-2ba1-45cc-9626-d4d6b0b1689b.png)
-
