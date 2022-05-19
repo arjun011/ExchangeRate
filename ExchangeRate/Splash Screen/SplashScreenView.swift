@@ -20,11 +20,19 @@ struct SplashScreenView: View {
                                label: { })
                 
                 Spacer()
+                
+                Image("hero-image")
+                    .resizable()
+                    .scaledToFit()
+                    .opacity(self.start ? 1 : 0)
+                    .animation(.easeIn(duration: 1).delay(0.3), value: self.start)
+                
                 Text("Exchange Rate")
-                    .font(.system(size: 32, weight: .medium, design: .rounded))
+                    .font(.system(size: 40, weight: .medium, design: .rounded))
                     .scaleEffect(self.start ? 1 : 0.2)
                     .opacity(self.start ? 1 : 0)
                     .animation(.interpolatingSpring(stiffness: 25, damping: 5, initialVelocity: 10).delay(0.1), value: self.start)
+                
                 Spacer()
                 
                 HStack(alignment: .center) {
