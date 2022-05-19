@@ -58,9 +58,17 @@ struct HistoricalRatesView: View {
             }.listStyle(.grouped)
                 .navigationBarBackButtonHidden(true)
                 .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle(Text(selectedCurrency?.base ?? "") + Text("*") +
-                                  Text(selectedCurrency?.symbol ?? ""))
                 .toolbar {
+                    ToolbarItem(placement: ToolbarItemPlacement.principal) {
+                        VStack {
+                            HStack(alignment: .center, spacing: 2, content: {
+                                Text(selectedCurrency?.base ?? "")
+                                Image(systemName: "circle.fill")
+                                    .font(.system(size: 10, weight: .regular))
+                                Text(selectedCurrency?.symbol ?? "")
+                            }).font(.system(size: 20, weight: .medium))
+                        }
+                    }
                     ToolbarItem(placement: .navigationBarLeading) {
                         Button {
                             presentationMode.wrappedValue.dismiss()
@@ -69,7 +77,6 @@ struct HistoricalRatesView: View {
                         }
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        
                         Button {
                             self.isFavourite.toggle()
                             if self.isFavourite {
